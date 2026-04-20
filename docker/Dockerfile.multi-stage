@@ -1,0 +1,11 @@
+# Multi-stage build for smaller production images
+FROM ubuntu:22.04 AS builder
+
+RUN apt-get update && apt-get install -y build-essential cmake git wget gnupg2
+# ... (ROCm install + project build)
+
+FROM ubuntu:22.04 AS runtime
+COPY --from=builder /opt/rocm /opt/rocm
+COPY --from=builder /workspace/build/app /usr/local/bin/
+ENV PATH=/opt/rocm/bin:$PATH
+ENTRYPOINT ["app"]
