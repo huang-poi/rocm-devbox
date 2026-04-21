@@ -1,0 +1,27 @@
+name: ROCm Build CI
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: rocm/dev-ubuntu-22.04:6.2
+      options: --device=/dev/kfd --device=/dev/dri --group-add=video
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build
+      run: |
+        mkdir build && cd build
+        cmake .. -DCMAKE_BUILD_TYPE=Release
+        make -j$(nproc)
+    
+    - name: Test
+      run: |
+        cd build
+        ctest --output-on-failure
+    
+    - name: Lint
+      run: |
+        find src -name "*.cpp" -o -name "*.hip" | xargs clang-tidy -p build
