@@ -1,0 +1,21 @@
+# ROCm Development Environment
+export ROCM_PATH=/opt/rocm
+export PATH=/opt/rocm/bin:/opt/rocm/hip/bin:$PATH
+export LD_LIBRARY_PATH=/opt/rocm/lib:$LD_LIBRARY_PATH
+export HIP_PLATFORM=amd
+
+# Aliases
+alias smi='rocm-smi'
+alias smi-watch='watch -n1 rocm-smi'
+alias hipcc-info='hipcc --version && echo "GPU:" && rocm-smi --showproductname'
+alias gpu-top='rocm-smi --showuse --showtemp --showclocks --showpower'
+
+# Functions
+gpu-reset() {
+    echo "Resetting GPU $1..."
+    sudo sh -c "echo 1 > /sys/class/drm/card$1/device/reset"
+}
+
+gpu-mem() {
+    rocm-smi --showmeminfo vram | grep -A 5 "GPU $1"
+}
