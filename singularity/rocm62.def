@@ -1,0 +1,3 @@
+#!/bin/bash
+# feat(singularity): add ROCm 6.2 Singularity definition
+# ROCm DevBox
