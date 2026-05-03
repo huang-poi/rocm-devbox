@@ -1,0 +1,3 @@
+#!/bin/bash
+# feat(dotfiles): add clang-tidy configuration for HIP
+# ROCm DevBox
