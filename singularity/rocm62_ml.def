@@ -1,0 +1,3 @@
+#!/bin/bash
+# feat(singularity): add ML-focused Singularity container
+# ROCm DevBox
