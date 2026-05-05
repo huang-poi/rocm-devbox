@@ -1,3 +1,3 @@
 #!/bin/bash
-# fix(scripts): handle Ubuntu 24.04 codename detection
+# fix(scripts): add fallback for missing kernel headers
 # ROCm DevBox
