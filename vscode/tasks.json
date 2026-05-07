@@ -1,0 +1,3 @@
+#!/bin/bash
+# feat(vscode): add build and test tasks for HIP projects
+# ROCm DevBox
