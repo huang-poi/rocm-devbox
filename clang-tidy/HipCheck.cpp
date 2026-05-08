@@ -1,3 +1,3 @@
 #!/bin/bash
-# feat(clang-tidy): add custom HIP code pattern checks
+# feat(clang-tidy): add async copy pattern validation
 # ROCm DevBox
