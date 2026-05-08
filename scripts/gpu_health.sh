@@ -1,3 +1,3 @@
 #!/bin/bash
-# feat(scripts): add GPU health monitoring script
+# feat(scripts): add thermal throttle detection
 # ROCm DevBox
