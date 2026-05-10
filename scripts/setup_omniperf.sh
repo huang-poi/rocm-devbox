@@ -1,3 +1,3 @@
 #!/bin/bash
-# feat(scripts): add Omniperf profiler setup
+# fix(scripts): handle ROCm path detection edge case
 # ROCm DevBox
