@@ -1,3 +1,3 @@
 #!/bin/bash
-# fix(scripts): add fallback for missing kernel headers
+# feat(scripts): add RHEL/Rocky Linux support
 # ROCm DevBox
