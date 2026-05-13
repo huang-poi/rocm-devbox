@@ -1,0 +1,3 @@
+#!/bin/bash
+# feat(singularity): add distributed training container
+# ROCm DevBox
